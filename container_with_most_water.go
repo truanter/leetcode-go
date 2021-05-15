@@ -24,6 +24,6 @@ func maxArea(height []int) int {
 	return res
 }
 
-func main() {
+func TestMaxArea() {
 	fmt.Print(maxArea([]int{1,8,6,2,5,4,8,3,7}))
 }
