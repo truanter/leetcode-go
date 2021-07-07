@@ -23,9 +23,23 @@ func cuttingRope(n int) int {
 	return l[n-1]
 }
 
+func cuttingRopeII(n int) int {
+	if n < 3 {
+		return 1
+	}
+	if n == 3 {
+		return 2
+	}
+	res := 1
+	for n > 4 {
+		res *= 3
+		res %= 1000000007
+		n -= 3
+	}
+	return (n * res) % 1000000007
+}
+
 
 func main() {
-	for i:=1; i< 10; i++ {
-		fmt.Println(fmt.Sprintf("n=%d, res=%d", i, cuttingRope(i)))
-	}
+	fmt.Println(cuttingRopeII(8))
 }
